@@ -1,0 +1,26 @@
+{
+  "name": "wanderer",
+  "version": "1.0.0",
+  "description": "WANDERER — The Drifting Lands. A procedural open-world game of exploration, discovery and survival. No build step, no dependencies.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server.mjs 8080",
+    "dev": "node server.mjs 8080",
+    "test": "node tools/test.mjs",
+    "smoke": "node tools/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "game",
+    "procedural",
+    "open-world",
+    "webgl",
+    "three.js",
+    "survival",
+    "crafting"
+  ],
+  "license": "MIT"
+}
