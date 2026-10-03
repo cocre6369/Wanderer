@@ -12,8 +12,19 @@ ruins, and the same wolves waiting in the same trees.
 
 ## Download
 
-**→ [releases/index.html](releases/index.html) is the single download page.**
-Open it for current and previous versions, checksums, and what changed.
+**→ [`releases/index.html`](releases/index.html) is the single download page.** Open it for the
+current and previous versions and what changed in each.
+
+The current release is **v1.0.0**:
+
+```bash
+git clone --branch v1.0.0 https://github.com/cocre6369/Wanderer.git
+# or download the archive:
+# https://github.com/cocre6369/Wanderer/archive/refs/tags/v1.0.0.zip
+```
+
+Either way you get the same 68 files, and both run offline — the archive contains the vendored
+three.js, so no CDN is contacted.
 
 ## Run it
 

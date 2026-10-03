@@ -63,23 +63,30 @@
       Download the archive, unpack it, and serve the folder over any static web server.
     </p>
     <div class="btns">
-      <a class="btn primary" href="https://github.com/cocre6369/Wanderer/releases/download/v1.0.0/wanderer-1.0.0.zip">Download v1.0.0 (zip)</a>
-      <a class="btn" href="https://github.com/cocre6369/Wanderer/archive/refs/tags/v1.0.0.zip">Source archive</a>
+      <a class="btn primary" href="https://github.com/cocre6369/Wanderer/archive/refs/tags/v1.0.0.zip">Download v1.0.0 (zip)</a>
+      <a class="btn" href="https://github.com/cocre6369/Wanderer/releases/tag/v1.0.0">Release notes</a>
       <a class="btn" href="https://github.com/cocre6369/Wanderer">Browse the repository</a>
     </div>
     <p class="note" style="margin-bottom:0">
       Already have the files? Run <code>node server.mjs 8080</code> in the folder and open
       <code>http://localhost:8080/</code>. Any static server works — the only requirement is that
-      <code>.js</code> is served as <code>text/javascript</code>.
+      <code>.js</code> is served as <code>text/javascript</code>. Or just clone it:
+      <code>git clone --depth 1 --branch v1.0.0 https://github.com/cocre6369/Wanderer.git</code>
     </p>
     <p class="mono" style="margin:10px 0 0;font-size:11.5px;color:#7d8b93">
-      wanderer-1.0.0.zip · 472 KiB · 68 files · sha256 checksum published in the release notes
+      68 files · unpacks to Wanderer-1.0.0/ · pinned by the git tag v1.0.0
+    </p>
+    <p class="mono" style="margin:4px 0 0;font-size:11.5px;color:#6c7a82">
+      Integrity check: GitHub regenerates source archives, so their bytes are not stable — the tag
+      is the durable anchor. Clone it and confirm <code>git rev-parse HEAD</code> equals
+      <code>git rev-list -n 1 v1.0.0</code>. Then <code>node tools/test.mjs</code> should print
+      <code>ALL PASSED &mdash; 67 checks</code>.
     </p>
   </div>
 
   <h2>Run it</h2>
   <div class="card">
-<pre>unzip wanderer-1.0.0.zip
+<pre>unzip v1.0.0.zip          # or: git clone --branch v1.0.0 https://github.com/cocre6369/Wanderer.git
 cd Wanderer-1.0.0
 node server.mjs 8080
 # → open http://localhost:8080/</pre>
@@ -102,8 +109,9 @@ node server.mjs 8080
         <td>2026-10-03</td>
         <td class="mono">3</td>
         <td>Current — stable</td>
-        <td><a href="https://github.com/cocre6369/Wanderer/releases/download/v1.0.0/wanderer-1.0.0.zip">zip</a>
-            · <a href="https://github.com/cocre6369/Wanderer/tree/v1.0.0">source</a></td>
+        <td><a href="https://github.com/cocre6369/Wanderer/archive/refs/tags/v1.0.0.zip">zip</a>
+            · <a href="https://github.com/cocre6369/Wanderer/tree/v1.0.0">source</a>
+            · <a href="https://github.com/cocre6369/Wanderer/releases/tag/v1.0.0">notes</a></td>
       </tr>
     </tbody>
   </table>
