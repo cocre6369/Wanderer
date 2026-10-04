@@ -454,6 +454,31 @@ section('module graph');
   assert(bare.length === 0, `no bare npm specifiers — the game runs with no install step${bare.length ? '\n       ' + bare.join('\n       ') : ''}`);
 }
 
+/* ── 14. every module the browser parses is valid ESM ─────────────── */
+section('browser parse');
+{
+  // A stray bracket in any module is a SyntaxError that only the browser sees;
+  // the simulation modules never import the UI/render layer. Parse each file
+  // exactly as the loader would, via node --check (honours "type":"module").
+  const { readdirSync } = await import('node:fs');
+  const { join, resolve } = await import('node:path');
+  const root = resolve(new URL('..', import.meta.url).pathname);
+  const mods = [];
+  (function walk(d) {
+    for (const f of readdirSync(d)) {
+      const p = join(d, f);
+      if (f.endsWith('.js') || f.endsWith('.mjs')) mods.push(p);
+      else if (!f.includes('.') && readdirSync(p).length) walk(p);
+    }
+  })(join(root, 'src'));
+  let badFiles = [];
+  for (const f of mods) {
+    try { execFileSync(process.execPath, ['--check', f], { stdio: 'pipe' }); }
+    catch (e) { badFiles.push(f.replace(root, '') + ' :: ' + String(e.stderr).split('\n')[0]); }
+  }
+  assert(badFiles.length === 0, `all ${mods.length} browser modules parse as ESM${badFiles.length ? '\n       ' + badFiles.join('\n       ') : ''}`);
+}
+
 /* ── result ───────────────────────────────────────────────────────── */
 console.log(`\n${fails ? fails + ' FAILURES' : 'ALL PASSED'} — ${checks} checks`);
 process.exit(fails ? 1 : 0);

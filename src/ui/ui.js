@@ -962,7 +962,7 @@ export class UI {
       el('span', { class: 'muted', text: PIECES[b.cursor.piece].desc })));
     this.buildBar.appendChild(el('div', { class: 'build-mat' },
       el('b', { text: MATERIALS[b.cursor.material].name }),
-      el('span', { class: 'muted', text: Object.entries(b.costOf(b.cursor.piece, b.cursor.material)).map(([k, v]) => `${v}× ${itemById(k) ? itemById(k).name : k}`).join('  ')) })));
+      el('span', { class: 'muted', text: Object.entries(b.costOf(b.cursor.piece, b.cursor.material)).map(([k, v]) => `${v}× ${itemById(k) ? itemById(k).name : k}`).join('  ') })));
     const pieces = el('div', { class: 'build-pieces' });
     for (const id in PIECES) {
       pieces.appendChild(el('button', {
