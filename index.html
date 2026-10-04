@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WANDERER — The Drifting Lands</title>
+<meta name="description" content="A procedural open-world game of exploration, discovery and survival. Every world is generated from a seed; nothing is placed twice." />
+<link rel="stylesheet" href="styles/main.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='13' fill='none' stroke='%23f0a24a' stroke-width='2'/><path d='M22 10 L13 19 L10 22 L13 19 Z' fill='%234fd1c5'/></svg>" />
+</head>
+<body>
+  <!-- WebGL surface: the world -->
+  <canvas id="gl"></canvas>
+
+  <!-- world-creation preview surface (used only on the title/create screens) -->
+  <canvas id="preview"></canvas>
+
+  <!-- in-game HUD + panels -->
+  <div id="ui" style="display:none"></div>
+
+  <!-- title / world creation / loading -->
+  <div id="screens"></div>
+
+  <div id="boot-fallback" class="boot-fallback">
+    <p>Loading WANDERER…</p>
+    <p class="muted">If this message stays, your browser blocked ES modules or WebGL. Try a recent Chrome, Edge, Firefox or Safari with hardware acceleration enabled.</p>
+  </div>
+
+  <script type="module">
+    // Hide the fallback as soon as module evaluation begins.
+    document.getElementById('boot-fallback').style.display = 'none';
+    import('./src/main.js').catch(err => {
+      const f = document.getElementById('boot-fallback');
+      f.style.display = '';
+      f.innerHTML = '<p>Failed to start.</p><pre>' + (err && err.stack ? err.stack : err) + '</pre>';
+      console.error(err);
+    });
+  </script>
+</body>
+</html>

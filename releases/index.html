@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WANDERER — Downloads &amp; Versions</title>
+<meta name="description" content="The one page for downloading WANDERER — The Drifting Lands. Current version, previous versions, what changed, and how to run it." />
+<style>
+  :root {
+    --ink:#0d1216; --ink2:#141c22; --ink3:#1d272e; --line:#33454f;
+    --parch:#efe6d0; --dim:#b9ae97; --amber:#f0a24a; --teal:#4fd1c5; --blood:#c8503c;
+    --serif: Georgia,'Iowan Old Style','Palatino Linotype',serif;
+    --sans:'Segoe UI',system-ui,-apple-system,sans-serif;
+    --mono: ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+    --cut: polygon(0 8px,8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1100px 600px at 15% -5%,#1a2a33,transparent 60%),radial-gradient(900px 500px at 95% 105%,#241f1a,transparent 55%),linear-gradient(160deg,#0b1014,#101a20 60%,#0b1014);
+       color:var(--parch);font-family:var(--sans);font-size:16px;line-height:1.6;min-height:100vh}
+  .wrap{max-width:940px;margin:0 auto;padding:44px 24px 80px}
+  h1{font-family:var(--serif);font-weight:400;letter-spacing:.4em;font-size:clamp(34px,7vw,64px);margin:0;text-align:center;text-shadow:0 0 40px rgba(240,162,74,.22)}
+  .sub{text-align:center;font-family:var(--serif);font-style:italic;color:var(--amber);letter-spacing:.16em;margin:4px 0 6px}
+  .meta{text-align:center;color:#7d8b93;font-size:13px;letter-spacing:.08em;margin-bottom:34px}
+  h2{font-family:var(--serif);font-weight:400;letter-spacing:.16em;font-size:22px;border-bottom:1px solid var(--line);padding-bottom:6px;margin:38px 0 14px}
+  p{color:#cfc6b2}
+  a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(79,209,197,.35)}
+  a:hover{color:#8ff0e6}
+  .card{background:linear-gradient(170deg,#101a20,#0b1115);border:1px solid var(--line);padding:22px 24px;margin:14px 0;clip-path:var(--cut)}
+  .card.latest{border-color:rgba(240,162,74,.55);box-shadow:0 0 0 1px rgba(240,162,74,.18) inset}
+  .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;padding:2px 9px;margin-left:8px;vertical-align:middle}
+  .tag.latest{background:var(--amber);color:#1a1208}
+  .tag.old{background:#22303a;color:var(--dim)}
+  .btns{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 6px}
+  .btn{display:inline-block;font-family:var(--serif);font-size:16px;padding:11px 20px;border:1px solid var(--line);
+       background:linear-gradient(180deg,var(--ink3),var(--ink2));color:var(--parch);clip-path:var(--cut);border-bottom:1px solid var(--line)}
+  .btn:hover{border-color:rgba(240,162,74,.6)}
+  .btn.primary{background:linear-gradient(180deg,var(--amber),#c8813a);color:#1a1208;font-weight:600;border-color:#c8813a}
+  .btn.primary:hover{background:linear-gradient(180deg,#ffbe6a,var(--amber))}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:7px 10px;border-bottom:1px solid #22303a}
+  th{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:400}
+  td.mono,.mono{font-family:var(--mono);font-size:12.5px;color:var(--teal)}
+  ul{padding-left:20px}
+  li{margin:3px 0}
+  code{font-family:var(--mono);font-size:13px;background:#0a0f12;border:1px solid #22303a;padding:1px 6px;color:var(--teal)}
+  pre{font-family:var(--mono);font-size:13px;background:#0a0f12;border:1px solid var(--line);padding:12px 14px;overflow:auto;color:#cfe4e0}
+  .note{border-left:3px solid var(--amber);padding:2px 0 2px 14px;color:var(--dim);font-size:14px}
+  .foot{margin-top:44px;text-align:center;color:#6c7a82;font-size:12.5px;letter-spacing:.06em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>WANDERER</h1>
+  <div class="sub">The Drifting Lands</div>
+  <div class="meta">downloads &amp; versions · this is the only page you need</div>
+
+  <div class="card latest">
+    <h2 style="margin-top:0;border:none;padding:0">Get the game</h2>
+    <p style="margin-top:0">
+      WANDERER is a procedural open-world game of exploration, discovery and survival that runs
+      in your browser. There is <b>nothing to install</b> — no launcher, no npm, no build step.
+      Download the archive, unpack it, and serve the folder over any static web server.
+    </p>
+    <div class="btns">
+      <a class="btn primary" href="https://github.com/cocre6369/Wanderer/archive/refs/tags/v1.0.0.zip">Download v1.0.0 (zip)</a>
+      <a class="btn" href="https://github.com/cocre6369/Wanderer/releases/tag/v1.0.0">Release notes</a>
+      <a class="btn" href="https://github.com/cocre6369/Wanderer">Browse the repository</a>
+    </div>
+    <p class="note" style="margin-bottom:0">
+      Already have the files? Run <code>node server.mjs 8080</code> in the folder and open
+      <code>http://localhost:8080/</code>. Any static server works — the only requirement is that
+      <code>.js</code> is served as <code>text/javascript</code>. Or just clone it:
+      <code>git clone --depth 1 --branch v1.0.0 https://github.com/cocre6369/Wanderer.git</code>
+    </p>
+    <p class="mono" style="margin:10px 0 0;font-size:11.5px;color:#7d8b93">
+      68 files · unpacks to Wanderer-1.0.0/ · pinned by the git tag v1.0.0
+    </p>
+    <p class="mono" style="margin:4px 0 0;font-size:11.5px;color:#6c7a82">
+      Integrity check: GitHub regenerates source archives, so their bytes are not stable — the tag
+      is the durable anchor. Clone it and confirm <code>git rev-parse HEAD</code> equals
+      <code>git rev-list -n 1 v1.0.0</code>. Then <code>node tools/test.mjs</code> should print
+      <code>ALL PASSED &mdash; 67 checks</code>.
+    </p>
+  </div>
+
+  <h2>Run it</h2>
+  <div class="card">
+<pre>unzip v1.0.0.zip          # or: git clone --branch v1.0.0 https://github.com/cocre6369/Wanderer.git
+cd Wanderer-1.0.0
+node server.mjs 8080
+# → open http://localhost:8080/</pre>
+    <p style="margin-bottom:0">
+      <b>Requires</b> a browser with WebGL 2 and ES modules — current Chrome, Edge, Firefox or Safari.
+      <b>Node</b> is only needed for the tiny bundled server and the test suite; the game itself is
+      plain browser code. Once unpacked it runs entirely offline: three.js is vendored inside the
+      archive and there are no CDN requests.
+    </p>
+  </div>
+
+  <h2>Versions</h2>
+  <table>
+    <thead>
+      <tr><th>Version</th><th>Released</th><th>World schema</th><th>Status</th><th>Download</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mono">v1.0.0</td>
+        <td>2026-10-03</td>
+        <td class="mono">3</td>
+        <td>Current — stable</td>
+        <td><a href="https://github.com/cocre6369/Wanderer/archive/refs/tags/v1.0.0.zip">zip</a>
+            · <a href="https://github.com/cocre6369/Wanderer/tree/v1.0.0">source</a>
+            · <a href="https://github.com/cocre6369/Wanderer/releases/tag/v1.0.0">notes</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">
+    Saves carry a world-schema number and are migrated forward on load, so a world from an older
+    version will still open. If a version is ever removed from this table, its tag stays on GitHub.
+  </p>
+
+  <h2>v1.0.0 — first release</h2>
+  <div class="card">
+    <p style="margin-top:0"><b>The complete playable game.</b></p>
+    <ul>
+      <li>Procedural worlds from a seed: 25 biomes (7 rare), rivers walked downhill, lakes, layered underground.</li>
+      <li>World-creation screen with seed control, 5 sizes, 6 types, 26 generation sliders, randomize-everything, and a live rotatable 3D preview you can hover for real ground data.</li>
+      <li>Continuous-LOD crack-free terrain, procedural sky with day/night and moon phases, animated water, instanced wind-blown vegetation.</li>
+      <li>35 POI types placed by contextual rules — villages, ruins, dungeons, shrines, hollow spires, landmarks — with interiors, loot, lights and NPCs.</li>
+      <li>Full movement set, survival stats, 118 items, generated weapons with 6 rarities and 22 affixes, 80 recipes across 9 stations.</li>
+      <li>Real-time combat with weight, reach, arcs, parries, dodges, combos, affinities and loot.</li>
+      <li>Modular building with snapping and free placement, farms with crops, weather fronts, 44 creature archetypes with distance-gated AI.</li>
+      <li>Fully synthesised audio, discovery journal with a mystery layer, contextual tutorial, procedural quests and location-priced trade.</li>
+      <li>Multi-slot saves with autosave, atomic writes and crash recovery.</li>
+    </ul>
+    <p style="margin-bottom:0">
+      <b>Tested:</b> <code>node tools/test.mjs</code> — 67 checks covering generator determinism,
+      mesher integrity, resource harvesting, POI geometry and terrain carving, build rules, farming,
+      weather, actors, combat, save migration and the module graph. Shader compilation and final
+      visuals need a real GPU and are not covered by the automated suite.
+    </p>
+  </div>
+
+  <h2>What is inside the archive</h2>
+  <table>
+    <thead><tr><th>Path</th><th>What it is</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">index.html</td><td>entry point — open this through the server</td></tr>
+      <tr><td class="mono">server.mjs</td><td>dependency-free static server</td></tr>
+      <tr><td class="mono">src/</td><td>the game: 43 modules, ~13k lines, no dependencies</td></tr>
+      <tr><td class="mono">styles/main.css</td><td>the whole visual identity</td></tr>
+      <tr><td class="mono">vendor/three/</td><td>three.js r160.1 + licence (vendored, offline)</td></tr>
+      <tr><td class="mono">tools/test.mjs</td><td>the test suite</td></tr>
+      <tr><td class="mono">releases/</td><td>this page</td></tr>
+      <tr><td class="mono">README.md</td><td>full documentation, controls, architecture</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Controls</h2>
+  <div class="card">
+    <table>
+      <tbody>
+        <tr><td class="mono">WASD / mouse</td><td>move, look</td></tr>
+        <tr><td class="mono">Shift · Space · C · X · G</td><td>sprint · jump/mantle · crouch · slide · glide</td></tr>
+        <tr><td class="mono">Q</td><td>dodge (brief invulnerability)</td></tr>
+        <tr><td class="mono">LMB / RMB / MMB</td><td>light attack · heavy attack · block (time it to parry)</td></tr>
+        <tr><td class="mono">E</td><td>interact — harvest, talk, open, use a station</td></tr>
+        <tr><td class="mono">I R M J K</td><td>inventory · crafting · map · journal · character</td></tr>
+        <tr><td class="mono">B · 1–0 · Z · Esc</td><td>build · hotbar · first/third person · settings</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="foot">
+    WANDERER — The Drifting Lands · MIT licence · three.js © its authors, MIT
+  </div>
+</div>
+</body>
+</html>

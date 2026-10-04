@@ -1,0 +1,21 @@
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Build / test artefacts
+dist/
+build/
+coverage/
+*.tgz
+
+# Scratch
+*.log
+.arena/
