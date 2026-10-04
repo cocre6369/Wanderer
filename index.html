@@ -29,10 +29,18 @@
   <script type="module">
     // Hide the fallback as soon as module evaluation begins.
     document.getElementById('boot-fallback').style.display = 'none';
-    import('./src/main.js').catch(err => {
+    import('./src/main.js').catch(async err => {
       const f = document.getElementById('boot-fallback');
       f.style.display = '';
       f.innerHTML = '<p>Failed to start.</p><pre>' + (err && err.stack ? err.stack : err) + '</pre>';
+      // Diagnostic: show which bytes THIS client received for the usual suspect,
+      // and the browser identity, so stale-cache vs bad-source is distinguishable.
+      try {
+        const t = await (await fetch('./src/ui/ui.js', { cache: 'no-store' })).text();
+        const line = (t.split('\n')[964] || '').trim().slice(-60);
+        f.innerHTML += '<pre>wire ui.js:965 tail: ' + line +
+          '\nagent: ' + navigator.userAgent + '</pre>';
+      } catch (e2) { /* diagnostic is best-effort */ }
       console.error(err);
     });
   </script>

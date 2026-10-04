@@ -61,7 +61,9 @@ const server = createServer(async (req, res) => {
     res.writeHead(200, {
       'content-type': MIME[extname(target).toLowerCase()] || 'application/octet-stream',
       'content-length': body.length,
-      'cache-control': 'no-cache',
+      'cache-control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+      'pragma': 'no-cache',
+      'expires': '0',
       'cross-origin-opener-policy': 'same-origin',
     });
     res.end(body);
